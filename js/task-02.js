@@ -6,12 +6,18 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+console.log(ingredients);
 
-ingredients.map((ingredients) => {
-  const itemEl = document.createElement(`li`);
-  itemEl.classList.add(`item`);
-  itemEl.textContent = ingredient;
-  console.log(itemEl);
-}).join(``);
 
-ingredients.insertAdjacentHTML("beforeend", itemEl);
+const list = document.querySelector('#ingredients');
+
+const items =ingredients.map(ingredient=>{
+		const li= document.createElement('li');
+		li.classList.add('js-item');
+		li.textContent=ingredient;
+	
+		return li;
+	});
+	console.log(items);
+	list.append(...items);
+
